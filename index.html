@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vaalmurth Server</title>
+  <style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  background: radial-gradient(#0f0f1f, #050515);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.sidebar {
+  width: 240px;
+  background-color: #0d0d1a;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.logo img {
+  width: 32px;
+}
+.nav-button {
+  background: none;
+  border: none;
+  color: #ccc;
+  padding: 10px 0;
+  text-align: left;
+  cursor: pointer;
+}
+.nav-button.active,
+.nav-button:hover {
+  color: white;
+}
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-section .banner img {
+  width: 100%;
+  border-radius: 10px;
+}
+.about-section .banner p {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+.mods ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.mods li {
+  background: #101020;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Roboto';
+}
+.form-section {
+  background: #0d0d1f;
+  padding: 20px;
+  border-radius: 10px;
+}
+.form-section h2 {
+  margin-top: 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input,
+textarea,
+select {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #1a1a2a;
+  color: white;
+}
+button[type="submit"] {
+  background-color: #00bcd4;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #0097a7;
+}
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="image/icon.png" alt="Vaalmurth Icon"/>
+        <span>Vaalmurth Server</span>
+      </div>
+      <nav>
+        <button class="nav-button active">About</button>
+        <button class="nav-button">Mods</button>
+        <button class="nav-button">Apply for Staff</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="about-section">
+        <h1>Abot</h1>
+        <div class="banner">
+          <img src="image/minecraft-banner.png" alt="Minecraft Banner"/>
+          <p>Server IP: vaalmurth.falixarv.me:33568</p>
+        </div>
+        <div class="mods">
+          <h2>Mods</h2>
+          <ul>
+            <li>/tpa</li>
+            <li>/tpaccept</li>
+            <li>/home</li>
+            <li>/sethome</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Apply for staff</h2>
+        <form id="staffForm" action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+          <input type="text" name="username" placeholder="Minecraft Username:" required />
+          <input type="number" name="age" placeholder="Age" required />
+          <textarea name="reason" placeholder="Reason for applying" required></textarea>
+          <textarea name="experience" placeholder="Experience" required></textarea>
+          <select name="role" required>
+            <option value="">Select role</option>
+            <option value="Mod">Mod</option>
+            <option value="Admin">Admin</option>
+            <option value="Helper">Helper</option>
+          </select>
+          <textarea name="situation" placeholder="How would you handle a difficult situation?" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
